@@ -38,5 +38,17 @@ namespace Practica_Recuperacion
             F2.Show();
             this.Hide();
         }
+
+        private void BEdit_Click(object sender, EventArgs e)
+        {
+            int? id = MD.GetId(DGVVista);
+
+            if (id != null)
+            {
+                DetencionesData F2 = new DetencionesData(this, id);
+                F2.Show();
+                this.Hide();
+            }
+        }
     }
 }

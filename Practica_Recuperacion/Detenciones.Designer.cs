@@ -47,27 +47,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGVVista)).BeginInit();
             this.SuspendLayout();
             // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.splitContainer1.Panel1.Controls.Add(BMove);
-            this.splitContainer1.Panel1.Controls.Add(BDelete);
-            this.splitContainer1.Panel1.Controls.Add(BEdit);
-            this.splitContainer1.Panel1.Controls.Add(BAdd);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.DGVVista);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 553);
-            this.splitContainer1.SplitterDistance = 246;
-            this.splitContainer1.TabIndex = 0;
-            // 
             // BMove
             // 
             BMove.BackColor = System.Drawing.SystemColors.ControlDark;
@@ -107,6 +86,7 @@
             BEdit.TabIndex = 2;
             BEdit.Text = "Editar";
             BEdit.UseVisualStyleBackColor = false;
+            BEdit.Click += new System.EventHandler(this.BEdit_Click);
             // 
             // BAdd
             // 
@@ -122,14 +102,37 @@
             BAdd.UseVisualStyleBackColor = false;
             BAdd.Click += new System.EventHandler(this.BAdd_Click);
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.splitContainer1.Panel1.Controls.Add(BMove);
+            this.splitContainer1.Panel1.Controls.Add(BDelete);
+            this.splitContainer1.Panel1.Controls.Add(BEdit);
+            this.splitContainer1.Panel1.Controls.Add(BAdd);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.DGVVista);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 553);
+            this.splitContainer1.SplitterDistance = 246;
+            this.splitContainer1.TabIndex = 0;
+            // 
             // DGVVista
             // 
             this.DGVVista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVVista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVVista.Location = new System.Drawing.Point(0, 0);
+            this.DGVVista.MultiSelect = false;
             this.DGVVista.Name = "DGVVista";
             this.DGVVista.RowHeadersWidth = 51;
             this.DGVVista.RowTemplate.Height = 24;
+            this.DGVVista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVVista.Size = new System.Drawing.Size(550, 553);
             this.DGVVista.TabIndex = 0;
             // 

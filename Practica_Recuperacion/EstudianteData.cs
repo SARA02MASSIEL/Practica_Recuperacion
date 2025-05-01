@@ -15,10 +15,30 @@ namespace Practica_Recuperacion
     public partial class EstudianteData : Form
     {
         private Estudiantes F1;
-        public EstudianteData(Estudiantes Form1)
+        public int? id;
+        Estudiante temp;
+        public EstudianteData(Estudiantes Form1, int? id = null)
         {
             InitializeComponent();
             F1 = Form1;
+            this.id = id;
+            if (id != null)
+            {
+                LoadData();
+            }
+        }
+
+        private void LoadData()
+        {
+            using (SchoolBDEntities db = new SchoolBDEntities())
+            {
+
+                temp = db.Estudiantes.Find(id);
+                TBMatricula.Text = temp.Matricula;
+                TBNombre.Text = temp.Nombre;
+                TBCurso.Text = temp.Curso;
+                TBTelefono.Text = temp.Telefono;
+            }
         }
 
         private void EstudianteData_FormClosing(object sender, FormClosingEventArgs e)
@@ -30,20 +50,39 @@ namespace Practica_Recuperacion
         {
             using (SchoolBDEntities db = new SchoolBDEntities())
             {
-                
-                var Matricula = new SqlParameter("@Matricula", TBMatricula.Text);
-                var Nombre = new SqlParameter("@Nombre", TBNombre.Text);
-                var Curso = new SqlParameter("@Curso", TBCurso.Text);
-                var Telefono = new SqlParameter("@Telefono", TBTelefono.Text);
+                if (id == null)
+                {
+                    var Matricula = new SqlParameter("@Matricula", TBMatricula.Text);
+                    var Nombre = new SqlParameter("@Nombre", TBNombre.Text);
+                    var Curso = new SqlParameter("@Curso", TBCurso.Text);
+                    var Telefono = new SqlParameter("@Telefono", TBTelefono.Text);
 
-                db.Database.ExecuteSqlCommand(
-                    "EXEC sp_InsertarEstudiante @Matricula, @Nombre, @Curso, @Telefono",
-                    Matricula,
-                    Nombre,
-                    Curso,
-                    Telefono
-                    );
-                MessageBox.Show("Guardado Correctamente");
+                    db.Database.ExecuteSqlCommand(
+                        "EXEC sp_InsertarEstudiante @Matricula, @Nombre, @Curso, @Telefono",
+                        Matricula,
+                        Nombre,
+                        Curso,
+                        Telefono
+                        );
+                    MessageBox.Show("Guardado Correctamente");
+                }
+                else
+                {
+                    var Estudiante_UID = new SqlParameter("@Estudiante_UID", id);
+                    var Matricula = new SqlParameter("@Matricula", TBMatricula.Text);
+                    var Nombre = new SqlParameter("@Nombre", TBNombre.Text);
+                    var Curso = new SqlParameter("@Curso", TBCurso.Text);
+                    var Telefono = new SqlParameter("@Telefono", TBTelefono.Text);
+                    db.Database.ExecuteSqlCommand(
+                        "EXEC sp_ActualizarEstudiante @Estudiante_UID, @Matricula, @Nombre, @Curso, @Telefono",
+                        Estudiante_UID,
+                        Matricula,
+                        Nombre,
+                        Curso,
+                        Telefono
+                        );
+                    MessageBox.Show("Guardado Correctamente");
+                }
             }
             F1.Refrescar();
             this.Close();

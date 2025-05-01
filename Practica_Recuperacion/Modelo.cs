@@ -27,5 +27,19 @@ namespace Practica_Recuperacion
                 return lst2.ToList();
             }
         }
+
+        public int? GetId(DataGridView asd)
+        {
+            try
+            {
+                return int.Parse(asd.Rows[asd.CurrentRow.Index].Cells[0].Value.ToString());
+            }
+            catch
+            {
+                return null;
+            }
+
+        }
+
     }
 }

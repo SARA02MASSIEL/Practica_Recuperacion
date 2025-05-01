@@ -15,32 +15,77 @@ namespace Practica_Recuperacion
     public partial class DetencionesData : Form
     {
         private Detenciones F1;
-        public DetencionesData(Detenciones Form1)
+        public int? id;
+        Detencione temp;
+        public DetencionesData(Detenciones Form1, int? id = null)
         {
             InitializeComponent();
             F1 = Form1;
+            this.id = id;
+            if (id != null)
+            {
+                LoadData();
+            }
+        }
+
+        private void LoadData()
+        {
+            using (SchoolBDEntities db = new SchoolBDEntities())
+            {
+                temp = db.Detenciones.Find(id);
+                NUPEstudianteID.Value = Convert.ToDecimal(temp.Estudiante_UID);
+                DTPFecha.Value = temp.Fecha ?? DateTime.Now;
+                NUPTotal.Value = Convert.ToDecimal(temp.Total);
+                CBEstado.Text = temp.Estado;
+                CBMotivo.Text = temp.Motivo;
+                CBTipo.Text = temp.Tipo;
+            }
         }
 
         private void BGuardar_Click(object sender, EventArgs e)
         {
             using (SchoolBDEntities db = new SchoolBDEntities())
             {
-                var Estudiante_UID = new SqlParameter("@Estudiante_UID", NUPEstudianteID.Value);
-                var Fecha = new SqlParameter("@Fecha", DTPFecha.Value);
-                var Total = new SqlParameter("@Total", NUPTotal.Value);
-                var Estado = new SqlParameter("@Estado", CBEstado.Text);
-                var Motivo = new SqlParameter("@Motivo", CBMotivo.Text);
-                var Tipo = new SqlParameter("@Tipo", CBTipo.Text);
+                if (id == null)
+                {
+                    var Estudiante_UID = new SqlParameter("@Estudiante_UID", NUPEstudianteID.Value);
+                    var Fecha = new SqlParameter("@Fecha", DTPFecha.Value);
+                    var Total = new SqlParameter("@Total", NUPTotal.Value);
+                    var Estado = new SqlParameter("@Estado", CBEstado.Text);
+                    var Motivo = new SqlParameter("@Motivo", CBMotivo.Text);
+                    var Tipo = new SqlParameter("@Tipo", CBTipo.Text);
 
-                db.Database.ExecuteSqlCommand(
-                    "EXEC sp_InsertarDetencion @Estudiante_UID, @Fecha, @Total, @Estado, @Motivo, @Tipo",
-                    Estudiante_UID,
-                    Fecha,
-                    Total,
-                    Estado,
-                    Motivo,
-                    Tipo
-                    );
+                    db.Database.ExecuteSqlCommand(
+                        "EXEC sp_InsertarDetencion @Estudiante_UID, @Fecha, @Total, @Estado, @Motivo, @Tipo",
+                        Estudiante_UID,
+                        Fecha,
+                        Total,
+                        Estado,
+                        Motivo,
+                        Tipo
+                        );
+                }
+                else
+                {
+                    var ID_Detencion = new SqlParameter("@ID_Detencion", id);
+                    var Estudiante_UID = new SqlParameter("@Estudiante_UID", NUPEstudianteID.Value);
+                    var Fecha = new SqlParameter("@Fecha", DTPFecha.Value);
+                    var Total = new SqlParameter("@Total", NUPTotal.Value);
+                    var Estado = new SqlParameter("@Estado", CBEstado.Text);
+                    var Motivo = new SqlParameter("@Motivo", CBMotivo.Text);
+                    var Tipo = new SqlParameter("@Tipo", CBTipo.Text);
+
+                    db.Database.ExecuteSqlCommand(
+                        "EXEC sp_ActualizarDetencion @ID_Detencion, @Estudiante_UID, @Fecha, @Total, @Estado, @Motivo, @Tipo",
+                        ID_Detencion,
+                        Estudiante_UID,
+                        Fecha,
+                        Total,
+                        Estado,
+                        Motivo,
+                        Tipo
+                        );
+                }
                 MessageBox.Show("Guardado Correctamente");
             }
             F1.Refrescar();
@@ -50,11 +95,6 @@ namespace Practica_Recuperacion
         private void DetencionesData_FormClosing(object sender, FormClosingEventArgs e)
         {
             F1.Show();
-        }
-
-        private void DetencionesData_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

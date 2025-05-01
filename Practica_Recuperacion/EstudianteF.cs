@@ -19,13 +19,13 @@ namespace Practica_Recuperacion
             InitializeComponent();
             Refrescar();
         }
-
+        #region
         public void Refrescar()
         {
             var lst = MD.Refrescar_Est();
             DGVVista.DataSource = lst.ToList();
         }
-
+        #endregion
         private void BMove_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -39,6 +39,18 @@ namespace Practica_Recuperacion
             EstudianteData F2 = new EstudianteData(this);
             F2.Show();
             this.Hide();
+        }
+
+        private void BEdit_Click(object sender, EventArgs e)
+        {
+            int? id = MD.GetId(DGVVista);
+
+            if (id != null)
+            {
+                EstudianteData F2 = new EstudianteData(this, id);
+                F2.Show();
+                this.Hide();
+            }
         }
     }
 }

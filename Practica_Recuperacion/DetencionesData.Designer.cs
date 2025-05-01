@@ -193,9 +193,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BGuardar.Font = new System.Drawing.Font("Congenial", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardar.Location = new System.Drawing.Point(175, 212);
+            this.BGuardar.Location = new System.Drawing.Point(158, 214);
             this.BGuardar.Name = "BGuardar";
-            this.BGuardar.Size = new System.Drawing.Size(135, 50);
+            this.BGuardar.Size = new System.Drawing.Size(152, 50);
             this.BGuardar.TabIndex = 23;
             this.BGuardar.Text = "Guardar";
             this.BGuardar.UseVisualStyleBackColor = true;
@@ -222,7 +222,6 @@
             this.Name = "DetencionesData";
             this.Text = "Añadir/Editar Detenciones";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DetencionesData_FormClosing);
-            this.Load += new System.EventHandler(this.DetencionesData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NUPTotal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NUPEstudianteID)).EndInit();
             this.ResumeLayout(false);

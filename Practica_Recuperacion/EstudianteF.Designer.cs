@@ -103,6 +103,7 @@
             this.BEdit.TabIndex = 2;
             this.BEdit.Text = "Editar";
             this.BEdit.UseVisualStyleBackColor = false;
+            this.BEdit.Click += new System.EventHandler(this.BEdit_Click);
             // 
             // BAdd
             // 
@@ -123,9 +124,11 @@
             this.DGVVista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVVista.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVVista.Location = new System.Drawing.Point(0, 0);
+            this.DGVVista.MultiSelect = false;
             this.DGVVista.Name = "DGVVista";
             this.DGVVista.RowHeadersWidth = 51;
             this.DGVVista.RowTemplate.Height = 24;
+            this.DGVVista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGVVista.Size = new System.Drawing.Size(550, 553);
             this.DGVVista.TabIndex = 0;
             // 
