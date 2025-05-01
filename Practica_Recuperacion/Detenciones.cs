@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Practica_Recuperacion
 {
-    public partial class Detenciones : Form
+    public partial class Estudiante : Form
     {
-        public Detenciones()
+        public Estudiante()
         {
             InitializeComponent();
         }

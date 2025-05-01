@@ -1,6 +1,6 @@
 ﻿namespace Practica_Recuperacion
 {
-    partial class Detenciones
+    partial class Estudiante
     {
         /// <summary>
         /// Required designer variable.
@@ -71,7 +71,7 @@
             this.BMove.Name = "BMove";
             this.BMove.Size = new System.Drawing.Size(246, 138);
             this.BMove.TabIndex = 4;
-            this.BMove.Text = "Detenciones";
+            this.BMove.Text = "Estudiantes";
             this.BMove.UseVisualStyleBackColor = true;
             // 
             // BDelete
@@ -124,14 +124,14 @@
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // Detenciones
+            // Estudiante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 553);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Detenciones";
-            this.Text = "Estudiantes";
+            this.Name = "Estudiante";
+            this.Text = "Detenciones";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();

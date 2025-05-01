@@ -55,6 +55,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Detenciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Detenciones.Designer.cs">
+      <DependentUpon>Detenciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estudiante.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Detenciones.resx">
+      <DependentUpon>Detenciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estudiante.resx">
+      <DependentUpon>Estudiante.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
