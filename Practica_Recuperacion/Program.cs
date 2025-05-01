@@ -16,7 +16,7 @@ namespace Practica_Recuperacion
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Estudiante());
+            Application.Run(new Estudiantes());
         }
     }
 }

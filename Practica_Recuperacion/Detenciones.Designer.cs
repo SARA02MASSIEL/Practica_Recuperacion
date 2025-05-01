@@ -1,6 +1,6 @@
 ﻿namespace Practica_Recuperacion
 {
-    partial class Estudiante
+    partial class Detenciones
     {
         /// <summary>
         /// Required designer variable.
@@ -34,13 +34,13 @@
             this.BDelete = new System.Windows.Forms.Button();
             this.BEdit = new System.Windows.Forms.Button();
             this.BAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DGVVista = new System.Windows.Forms.DataGridView();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVVista)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -58,7 +58,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel2.Controls.Add(this.DGVVista);
             this.splitContainer1.Size = new System.Drawing.Size(800, 553);
             this.splitContainer1.SplitterDistance = 246;
             this.splitContainer1.TabIndex = 0;
@@ -73,6 +73,7 @@
             this.BMove.TabIndex = 4;
             this.BMove.Text = "Estudiantes";
             this.BMove.UseVisualStyleBackColor = true;
+            this.BMove.Click += new System.EventHandler(this.BMove_Click);
             // 
             // BDelete
             // 
@@ -108,35 +109,35 @@
             this.BAdd.UseVisualStyleBackColor = true;
             this.BAdd.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // DGVVista
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(550, 553);
-            this.dataGridView1.TabIndex = 0;
+            this.DGVVista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVVista.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVVista.Location = new System.Drawing.Point(0, 0);
+            this.DGVVista.Name = "DGVVista";
+            this.DGVVista.RowHeadersWidth = 51;
+            this.DGVVista.RowTemplate.Height = 24;
+            this.DGVVista.Size = new System.Drawing.Size(550, 553);
+            this.DGVVista.TabIndex = 0;
             // 
             // notifyIcon1
             // 
             this.notifyIcon1.Text = "notifyIcon1";
             this.notifyIcon1.Visible = true;
             // 
-            // Estudiante
+            // Detenciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 553);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Estudiante";
+            this.Name = "Detenciones";
             this.Text = "Detenciones";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVVista)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -144,7 +145,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DGVVista;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.Button BAdd;
         private System.Windows.Forms.Button BEdit;
