@@ -90,6 +90,7 @@
             this.BDelete.TabIndex = 3;
             this.BDelete.Text = "Eliminar";
             this.BDelete.UseVisualStyleBackColor = false;
+            this.BDelete.Click += new System.EventHandler(this.BDelete_Click);
             // 
             // BEdit
             // 

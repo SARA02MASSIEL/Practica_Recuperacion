@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practica_Recuperacion.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -48,6 +49,23 @@ namespace Practica_Recuperacion
                 DetencionesData F2 = new DetencionesData(this, id);
                 F2.Show();
                 this.Hide();
+            }
+        }
+
+        private void BDelete_Click(object sender, EventArgs e)
+        {
+            int? id = MD.GetId(DGVVista);
+            Detencione delete;
+
+            if (id != null)
+            {
+                using (SchoolBDEntities db = new SchoolBDEntities())
+                {
+                    delete = db.Detenciones.Find(id);
+                    db.Detenciones.Remove(delete);
+                    db.SaveChanges();
+                }
+                Refrescar();
             }
         }
     }

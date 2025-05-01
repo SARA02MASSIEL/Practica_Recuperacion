@@ -52,5 +52,22 @@ namespace Practica_Recuperacion
                 this.Hide();
             }
         }
+
+        private void BDelete_Click(object sender, EventArgs e)
+        {
+            int? id = MD.GetId(DGVVista);
+            Estudiante delete;
+
+            if (id != null)
+            {
+                using (SchoolBDEntities db = new SchoolBDEntities())
+                {
+                    delete = db.Estudiantes.Find(id);
+                    db.Estudiantes.Remove(delete);
+                    db.SaveChanges();
+                }
+                Refrescar();
+            }
+        }
     }
 }
