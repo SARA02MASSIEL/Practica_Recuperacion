@@ -55,6 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EstudianteData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EstudianteData.Designer.cs">
+      <DependentUpon>EstudianteData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DetencionesData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetencionesData.Designer.cs">
+      <DependentUpon>DetencionesData.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modelo.cs" />
     <Compile Include="Detenciones.cs">
       <SubType>Form</SubType>
@@ -62,11 +74,11 @@
     <Compile Include="Detenciones.Designer.cs">
       <DependentUpon>Detenciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estudiante.cs">
+    <Compile Include="EstudianteF.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Estudiante.Designer.cs">
-      <DependentUpon>Estudiante.cs</DependentUpon>
+    <Compile Include="EstudianteF.Designer.cs">
+      <DependentUpon>EstudianteF.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Detencione.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -100,8 +112,14 @@
     <EmbeddedResource Include="Detenciones.resx">
       <DependentUpon>Detenciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estudiante.resx">
-      <DependentUpon>Estudiante.cs</DependentUpon>
+    <EmbeddedResource Include="DetencionesData.resx">
+      <DependentUpon>DetencionesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstudianteF.resx">
+      <DependentUpon>EstudianteF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EstudianteData.resx">
+      <DependentUpon>EstudianteData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

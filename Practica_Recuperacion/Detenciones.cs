@@ -12,17 +12,16 @@ namespace Practica_Recuperacion
 {
     public partial class Detenciones : Form
     {
+        Modelo MD = new Modelo();
         public Detenciones()
         {
             InitializeComponent();
-            Modelo MD = new Modelo();
+            Refrescar();
+        }
+        public void Refrescar()
+        {
             var lst2 = MD.Refrescar_Det();
             DGVVista.DataSource = lst2.ToList();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void BMove_Click(object sender, EventArgs e)
@@ -31,6 +30,13 @@ namespace Practica_Recuperacion
             var form2 = new Estudiantes();
             form2.Closed += (s, args) => this.Close();
             form2.Show();
+        }
+
+        private void BAdd_Click(object sender, EventArgs e)
+        {
+            DetencionesData F2 = new DetencionesData(this);
+            F2.Show();
+            this.Hide();
         }
     }
 }

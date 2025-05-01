@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Button BMove;
+            System.Windows.Forms.Button BDelete;
+            System.Windows.Forms.Button BEdit;
+            System.Windows.Forms.Button BAdd;
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.BMove = new System.Windows.Forms.Button();
-            this.BDelete = new System.Windows.Forms.Button();
-            this.BEdit = new System.Windows.Forms.Button();
-            this.BAdd = new System.Windows.Forms.Button();
             this.DGVVista = new System.Windows.Forms.DataGridView();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            BMove = new System.Windows.Forms.Button();
+            BDelete = new System.Windows.Forms.Button();
+            BEdit = new System.Windows.Forms.Button();
+            BAdd = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -51,10 +55,11 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.BMove);
-            this.splitContainer1.Panel1.Controls.Add(this.BDelete);
-            this.splitContainer1.Panel1.Controls.Add(this.BEdit);
-            this.splitContainer1.Panel1.Controls.Add(this.BAdd);
+            this.splitContainer1.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.splitContainer1.Panel1.Controls.Add(BMove);
+            this.splitContainer1.Panel1.Controls.Add(BDelete);
+            this.splitContainer1.Panel1.Controls.Add(BEdit);
+            this.splitContainer1.Panel1.Controls.Add(BAdd);
             // 
             // splitContainer1.Panel2
             // 
@@ -65,49 +70,57 @@
             // 
             // BMove
             // 
-            this.BMove.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BMove.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BMove.Location = new System.Drawing.Point(0, 414);
-            this.BMove.Name = "BMove";
-            this.BMove.Size = new System.Drawing.Size(246, 138);
-            this.BMove.TabIndex = 4;
-            this.BMove.Text = "Estudiantes";
-            this.BMove.UseVisualStyleBackColor = true;
-            this.BMove.Click += new System.EventHandler(this.BMove_Click);
+            BMove.BackColor = System.Drawing.SystemColors.ControlDark;
+            BMove.Dock = System.Windows.Forms.DockStyle.Top;
+            BMove.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            BMove.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            BMove.Location = new System.Drawing.Point(0, 414);
+            BMove.Name = "BMove";
+            BMove.Size = new System.Drawing.Size(246, 138);
+            BMove.TabIndex = 4;
+            BMove.Text = "Estudiantes";
+            BMove.UseVisualStyleBackColor = false;
+            BMove.Click += new System.EventHandler(this.BMove_Click);
             // 
             // BDelete
             // 
-            this.BDelete.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BDelete.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BDelete.Location = new System.Drawing.Point(0, 276);
-            this.BDelete.Name = "BDelete";
-            this.BDelete.Size = new System.Drawing.Size(246, 138);
-            this.BDelete.TabIndex = 3;
-            this.BDelete.Text = "Eliminar";
-            this.BDelete.UseVisualStyleBackColor = true;
+            BDelete.BackColor = System.Drawing.SystemColors.ControlDark;
+            BDelete.Dock = System.Windows.Forms.DockStyle.Top;
+            BDelete.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            BDelete.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            BDelete.Location = new System.Drawing.Point(0, 276);
+            BDelete.Name = "BDelete";
+            BDelete.Size = new System.Drawing.Size(246, 138);
+            BDelete.TabIndex = 3;
+            BDelete.Text = "Eliminar";
+            BDelete.UseVisualStyleBackColor = false;
             // 
             // BEdit
             // 
-            this.BEdit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BEdit.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BEdit.Location = new System.Drawing.Point(0, 138);
-            this.BEdit.Name = "BEdit";
-            this.BEdit.Size = new System.Drawing.Size(246, 138);
-            this.BEdit.TabIndex = 2;
-            this.BEdit.Text = "Editar";
-            this.BEdit.UseVisualStyleBackColor = true;
+            BEdit.BackColor = System.Drawing.SystemColors.ControlDark;
+            BEdit.Dock = System.Windows.Forms.DockStyle.Top;
+            BEdit.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            BEdit.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            BEdit.Location = new System.Drawing.Point(0, 138);
+            BEdit.Name = "BEdit";
+            BEdit.Size = new System.Drawing.Size(246, 138);
+            BEdit.TabIndex = 2;
+            BEdit.Text = "Editar";
+            BEdit.UseVisualStyleBackColor = false;
             // 
             // BAdd
             // 
-            this.BAdd.Dock = System.Windows.Forms.DockStyle.Top;
-            this.BAdd.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAdd.Location = new System.Drawing.Point(0, 0);
-            this.BAdd.Name = "BAdd";
-            this.BAdd.Size = new System.Drawing.Size(246, 138);
-            this.BAdd.TabIndex = 1;
-            this.BAdd.Text = "Añadir";
-            this.BAdd.UseVisualStyleBackColor = true;
-            this.BAdd.Click += new System.EventHandler(this.button1_Click);
+            BAdd.BackColor = System.Drawing.SystemColors.ControlDark;
+            BAdd.Dock = System.Windows.Forms.DockStyle.Top;
+            BAdd.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            BAdd.Font = new System.Drawing.Font("Congenial", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            BAdd.Location = new System.Drawing.Point(0, 0);
+            BAdd.Name = "BAdd";
+            BAdd.Size = new System.Drawing.Size(246, 138);
+            BAdd.TabIndex = 1;
+            BAdd.Text = "Añadir";
+            BAdd.UseVisualStyleBackColor = false;
+            BAdd.Click += new System.EventHandler(this.BAdd_Click);
             // 
             // DGVVista
             // 
@@ -147,10 +160,6 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView DGVVista;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
-        private System.Windows.Forms.Button BAdd;
-        private System.Windows.Forms.Button BEdit;
-        private System.Windows.Forms.Button BMove;
-        private System.Windows.Forms.Button BDelete;
     }
 }
 
