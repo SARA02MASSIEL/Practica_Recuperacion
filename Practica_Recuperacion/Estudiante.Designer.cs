@@ -1,6 +1,6 @@
 ﻿namespace Practica_Recuperacion
 {
-    partial class Form1
+    partial class Estudiante
     {
         /// <summary>
         /// Required designer variable.
